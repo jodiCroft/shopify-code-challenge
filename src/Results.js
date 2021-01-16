@@ -12,19 +12,22 @@ const Results = ({ search, handleNominate, nominations }) => {
   // stretch: paginate results....
   if (results) {
     return (
-      <div>
-        <ul style={{ listStyleType: "none" }}>
-          {results.map((res) => (
-            <li key={res.imdbID}>
-              <MovieCard
-                movie={res}
-                handleNominate={handleNominate}
-                nominations={nominations}
-                category="Results"
-              />
-            </li>
-          ))}
-        </ul>
+      <div className="BorderBox">
+        <p>Search results for "{search}"</p>
+        <div className="ResultsList">
+          <ul style={{ listStyleType: "none" }}>
+            {results.map((res) => (
+              <li key={res.imdbID}>
+                <MovieCard
+                  movie={res}
+                  handleNominate={handleNominate}
+                  nominations={nominations}
+                  category="Results"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

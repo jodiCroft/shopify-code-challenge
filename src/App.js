@@ -25,13 +25,21 @@ function App() {
 
   return (
     <div className="App">
+      <div className="Title">
+        <h3>The Shoppies</h3>
+      </div>
       <Search handleSearch={handleSearch} />
-      <Results
-        nominations={nominations}
-        search={search}
-        handleNominate={handleNominate}
-      />
-      <Nominations nominations={nominations} handleNominate={handleNominate} />
+      <div className="AllMovies">
+        <Results
+          nominations={nominations}
+          search={search}
+          handleNominate={handleNominate}
+        />
+        <Nominations
+          nominations={nominations}
+          handleNominate={handleNominate}
+        />
+      </div>
     </div>
   );
 }

@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 
 const MovieCard = ({ movie, handleNominate, category, nominations }) => {
-  const { Title, Year, Poster } = movie;
+  const { Title, Year } = movie;
 
   const handleButton = () => {
     return nominations.find((mov) => movie.imdbID === mov.imdbID);
   };
 
   return (
-    <div>
+    <div className="MovieCard">
       <h3>{Title}</h3>
-      <h4>({Year})</h4>
-      <img src={Poster} style={{ width: "150px", height: "200px" }}></img>
-      <button
-        onClick={() => handleNominate(movie, category)}
-        disabled={handleButton() && category === "Results"}
-      >
-        {category === "Results" ? "Nominate" : "Remove"}
-      </button>
+      <h5>({Year})</h5>
+
+      <div>
+        <button
+          onClick={() => handleNominate(movie, category)}
+          disabled={handleButton() && category === "Results"}
+        >
+          {category === "Results" ? "Nominate" : "Remove"}
+        </button>
+      </div>
     </div>
   );
 };
