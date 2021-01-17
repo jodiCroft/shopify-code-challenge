@@ -1,4 +1,4 @@
-.App {
+.Window {
   margin: 50px 500px;
 }
 
@@ -10,26 +10,67 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
+.NavBar {
+  padding: 15px;
+}
+
+.SearchBar {
+  border: 1px solid grey;
+  border-radius: 0px;
+  height: 25px;
+  width: 96%;
+  padding: 2px 23px 2px 5px;
+  outline: 0;
+  background-color: #fffdfd;
+}
+
 .AllMovies {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 15px;
 }
 
-.ResultsList {
-  display: flex;
-  width: 300px;
-  padding: 5px;
-}
-
 .NominationsList {
   display: flex;
-  width: 300px;
-  padding: 5px;
+  min-width: 300px;
+  min-height: 50px;
+}
+
+.ResultsList {
+  display: flex;
+  min-width: 300px;
+  min-height: 50px;
 }
 
 .MovieCard {
-  border: 2px solid rgb(57, 60, 61);
-  padding: 50px;
-  margin: 20px;
+  text-align: center;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px 20px 20px;
+  width: 250px;
+  margin: 15px;
+}
+
+.Button {
+  background-color: #c5c5c5;
+  border: none;
+  padding: 5px 15px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.TitleText {
+  font-weight: bold;
+}
+
+.MovieTitle {
+  margin-bottom: 0px;
+}
+
+.Year {
+  font-size: small;
+  margin-top: 0px;
+  margin-bottom: 25px;
 }

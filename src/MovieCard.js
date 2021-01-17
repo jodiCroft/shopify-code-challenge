@@ -9,17 +9,16 @@ const MovieCard = ({ movie, handleNominate, category, nominations }) => {
 
   return (
     <div className="MovieCard">
-      <h3>{Title}</h3>
-      <h5>({Year})</h5>
+      <h3 className="MovieTitle">{Title}</h3>
+      <p className="Year">({Year})</p>
 
-      <div>
-        <button
-          onClick={() => handleNominate(movie, category)}
-          disabled={handleButton() && category === "Results"}
-        >
-          {category === "Results" ? "Nominate" : "Remove"}
-        </button>
-      </div>
+      <button
+        className="Button"
+        onClick={() => handleNominate(movie, category)}
+        disabled={handleButton() && category === "Results"}
+      >
+        {category === "Results" ? "Nominate" : "Remove"}
+      </button>
     </div>
   );
 };

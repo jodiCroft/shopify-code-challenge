@@ -19,26 +19,28 @@ function App() {
       let newNominations = nominations.filter((n) => n.imdbID !== movie.imdbID);
       setNominations(newNominations);
     }
-    if (nominations.length === 5)
+    if (nominations.length === 5 && category === "Results")
       alert("You already have 5 nominations, you big movie buff...Thank you!");
   };
 
   return (
     <div className="App">
-      <div className="Title">
-        <h3>The Shoppies</h3>
-      </div>
-      <Search handleSearch={handleSearch} />
-      <div className="AllMovies">
-        <Results
-          nominations={nominations}
-          search={search}
-          handleNominate={handleNominate}
-        />
-        <Nominations
-          nominations={nominations}
-          handleNominate={handleNominate}
-        />
+      <div className="Window">
+        <div className="Title">
+          <h3>The Shoppies</h3>
+        </div>
+        <Search handleSearch={handleSearch} />
+        <div className="AllMovies">
+          <Results
+            nominations={nominations}
+            search={search}
+            handleNominate={handleNominate}
+          />
+          <Nominations
+            nominations={nominations}
+            handleNominate={handleNominate}
+          />
+        </div>
       </div>
     </div>
   );
