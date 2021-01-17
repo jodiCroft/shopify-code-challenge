@@ -3,9 +3,10 @@ import MovieCard from "./MovieCard";
 
 const Results = ({ search, handleNominate, nominations }) => {
   const [results, setResults] = useState([]);
+  const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${search}&apikey=846a660`)
+    fetch(`http://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`)
       .then((res) => res.json())
       .then((results) => setResults(results.Search));
   }, [search]);
