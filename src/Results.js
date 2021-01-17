@@ -13,20 +13,20 @@ const Results = ({ search, handleNominate, nominations }) => {
   if (results) {
     return (
       <div className="BorderBox">
-        <p>Search results for "{search}"</p>
+        <p className="TitleText">Search results for "{search}"</p>
         <div className="ResultsList">
-          <ul style={{ listStyleType: "none" }}>
+          <div>
             {results.map((res) => (
-              <li key={res.imdbID}>
+              <div key={res.imdbID}>
                 <MovieCard
                   movie={res}
                   handleNominate={handleNominate}
-                  nominations={nominations}
                   category="Results"
+                  nominations={nominations}
                 />
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     );

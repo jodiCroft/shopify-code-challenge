@@ -4,20 +4,20 @@ import MovieCard from "./MovieCard";
 const Nominations = ({ nominations, handleNominate }) => {
   return (
     <div className="BorderBox">
-      <p>Your Nominations</p>
+      <p className="TitleText">Your Nominations</p>
       <div className="NominationsList">
-        <ul style={{ listStyleType: "none" }}>
+        <div>
           {nominations.map((nom) => (
-            <li key={nom.imdbID}>
+            <div key={nom.imdbID}>
               <MovieCard
                 movie={nom}
                 handleNominate={handleNominate}
                 category="Nominations"
                 nominations={nominations}
               />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
