@@ -6,7 +6,7 @@ const Results = ({ search, handleNominate, nominations }) => {
   const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`)
+    fetch(`https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`)
       .then((res) => res.json())
       .then((results) => setResults(results.Search));
   }, [search]);
