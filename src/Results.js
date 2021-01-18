@@ -10,23 +10,25 @@ const Results = ({ search, handleNominate, nominations }) => {
       .then((res) => res.json())
       .then((results) => setResults(results.Search));
   }, [search]);
-  // stretch: paginate results....
+  // stretch: paginate results...
   if (results) {
     return (
-      <div className="BorderBox">
-        <p className="TitleText">Search results for "{search}"</p>
-        <div className="ResultsList">
-          <div>
-            {results.map((res) => (
-              <div key={res.imdbID}>
-                <MovieCard
-                  movie={res}
-                  handleNominate={handleNominate}
-                  category="Results"
-                  nominations={nominations}
-                />
-              </div>
-            ))}
+      <div className="ResultsWrapper">
+        <div className="BorderBox">
+          <p className="TitleText">Search results for "{search}"</p>
+          <div className="ResultsList">
+            <div className="CardWrapper">
+              {results.map((res) => (
+                <div key={res.imdbID}>
+                  <MovieCard
+                    movie={res}
+                    handleNominate={handleNominate}
+                    category="Results"
+                    nominations={nominations}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
